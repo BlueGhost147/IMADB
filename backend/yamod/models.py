@@ -22,7 +22,7 @@ class Movie(models.Model):
     release_date = models.DateField()
     plot = models.TextField()
     duration = models.PositiveIntegerField(help_text='in Minutes')
-    black_and_white = models.BooleanField()
+    black_and_white = models.BooleanField(null=True)
     country = models.ForeignKey(Country, on_delete=models.CASCADE, null=True)
     actors = models.ManyToManyField('Person', blank=True)
 
